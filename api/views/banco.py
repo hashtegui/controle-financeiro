@@ -1,5 +1,5 @@
 from api.models import Banco
-from api import schemas
+from api.schemas import banco
 from fastapi import HTTPException
 from config import get_db
 
@@ -9,7 +9,7 @@ def get_many():
         return db.query(Banco).all()
 
 
-def create(banco: schemas.BancoSchema):
+def create(banco: banco.BancoSchema):
     with get_db() as db:
         try:
             db_banco = Banco(**banco.dict())
@@ -17,5 +17,5 @@ def create(banco: schemas.BancoSchema):
             db.commit()
             db.refresh(db_banco)
             return db_banco
-        except HTTPException as err:
+        except Exception as err:
             raise HTTPException(status_code=400, detail=err)

@@ -1,10 +1,11 @@
 from fastapi import FastAPI
-from api.routers import banco
+from api.routers import BancoRouter, CartaoRouter
 
 
 app = FastAPI()
 
-app.include_router(banco.router)
+app.include_router(BancoRouter)
+app.include_router(CartaoRouter)
 
 
 if __name__ == '__main__':

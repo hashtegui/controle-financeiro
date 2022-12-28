@@ -1,10 +1,6 @@
-from pydantic import BaseModel, Field, constr
+from pydantic import Field, constr
 from typing import Optional
-
-
-class BaseConfig(BaseModel):
-    class Config:
-        orm_mode = True
+from config import BaseConfig
 
 
 class BancoSchema(BaseConfig):

@@ -1,3 +1,4 @@
+from pydantic import BaseModel
 from contextlib import contextmanager
 from .connection import engine
 from sqlalchemy.orm import Session
@@ -15,3 +16,8 @@ def get_db():
 
 Base = declarative_base(bind=engine)
 metadata = Base.metadata
+
+
+class BaseConfig(BaseModel):
+    class Config:
+        orm_mode = True
