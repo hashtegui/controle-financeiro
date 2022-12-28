@@ -1,10 +1,7 @@
 from api.models import Banco
 from api import schemas
-from fastapi import HTTPException, APIRouter
+from fastapi import HTTPException
 from config import get_db
-
-
-router = APIRouter(prefix='/bancos')
 
 
 def get_many():
@@ -12,7 +9,7 @@ def get_many():
         return db.query(Banco).all()
 
 
-def create(banco: schemas.Banco):
+def create(banco: schemas.BancoSchema):
     with get_db() as db:
         try:
             db_banco = Banco(**banco.dict())

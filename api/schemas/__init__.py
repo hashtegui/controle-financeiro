@@ -1,3 +1,3 @@
-from .banco import Banco
+from .banco import BancoSchema
 
-Banco = Banco
+BancoSchema = BancoSchema

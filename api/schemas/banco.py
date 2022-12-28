@@ -7,7 +7,7 @@ class BaseConfig(BaseModel):
         orm_mode = True
 
 
-class Banco(BaseConfig):
+class BancoSchema(BaseConfig):
     id: Optional[int]
     nome: str = Field(constr(max_length=20))
     agencia: str
