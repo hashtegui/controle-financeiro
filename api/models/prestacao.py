@@ -16,5 +16,6 @@ class Prestacao(Base):
     id_lancamento = Column(ForeignKey('lancamento.id'),
                            nullable=False, index=True)
     dt_vencimento = Column(Date, nullable=False)
+    valor_prestacao = Column(INTEGER(11), nullable=False)
 
     lancamento = relationship('Lancamento')

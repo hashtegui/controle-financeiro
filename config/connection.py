@@ -1,8 +1,5 @@
-import cx_Oracle
-from sqlalchemy import create_engine, MetaData
-import io
-import sys
-from sqlalchemy.ext.automap import automap_base
+\
+from sqlalchemy import create_engine
 # from sqlacodegen.codegen import CodeGenerator
 
 
