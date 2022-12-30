@@ -18,5 +18,5 @@ class Lancamento(Base):
     id_cartao = Column(ForeignKey('cartao.id'), index=True)
     obs = Column(String(20))
 
-    banco = relationship('Banco')
-    cartao = relationship('Cartao')
+    banco = relationship('Banco', lazy='joined')
+    cartao = relationship('Cartao', lazy='joined')
