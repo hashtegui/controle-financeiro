@@ -1,10 +1,10 @@
 from config import get_db
-from api import schemas
+from api.schemas.cartao import CartaoSchema
 from api.models import Cartao, Banco
 from typing import List
 
 
-def create(cartao: schemas.CartaoSchema):
+def create(cartao: CartaoSchema):
     with get_db() as db:
         try:
             banco: Banco = db.get(Banco, cartao.id_banco)
