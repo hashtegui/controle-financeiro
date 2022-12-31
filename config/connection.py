@@ -1,10 +1,9 @@
-\
 from sqlalchemy import create_engine
 # from sqlacodegen.codegen import CodeGenerator
 
 
 # cx_Oracle.init_oracle_client(lib_dir=r'/home/ti/oracle/instantclient')
-controle_financeiro = "mysql+pymysql://root:123456@localhost/controle_financeiro"
+controle_financeiro = "mysql+pymysql://root:123456@database/controle_financeiro"
 # funnytech = 'oracle://funnytech:f5nn3t2ch@192.168.0.209/wint'
 
 engine = create_engine(controle_financeiro)

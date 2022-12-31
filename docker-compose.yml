@@ -8,3 +8,18 @@ services:
       - ./:/app
     ports:
       - "8000:8000"
+    depends_on:
+      - database
+    networks:
+      - padrao
+  database:
+    image: controle_financeiro_db
+    container_name: database
+    networks:
+      - padrao
+    ports:
+      - 3306:3306
+
+networks:
+  padrao:
+    driver: bridge
